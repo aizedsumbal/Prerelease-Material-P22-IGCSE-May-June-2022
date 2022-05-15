@@ -1,8 +1,11 @@
 total = 0
 bookingrpt = 0
 ticketinput = 0
+attractioninput = 0
+daycount=0
 ticket_type = ["0. Adult","1. Child","2. Senior","3. Family","4. Group>=6"]
 type_counts = [0,0,0,0,0]
+att_counts = [0,0,0]
 oneday_price = [20, 12, 16, 60, 15]
 twoday_price = [30, 18, 24, 90, 22.5]
 
@@ -35,6 +38,9 @@ for i in range(7):
         day = 0
     day = day + 1
 
+daycount = int(input("Enter 1 for 1-day booking or 2 for 2-day booking: "))
+while(daycount != 1 and daycount != 2):
+    daycount = int(input("Enter 1 for 1-day booking or 2 for 2-day booking: "))
 
 while(ticketinput != -1):
     ticketinput = int(input("Select options from 0 - 4 to book ticket(s) or -1 to end booking: "))
@@ -81,4 +87,25 @@ while(ticketinput != -1):
         grpchildren = childcount
         type_counts[4] = type_counts[4] + groupcount
         print("")
+
+    else:
+        print("Enter a value between 0 and 4")
+
+    extra = int(input("\nEnter 1. if you want extra attractions or 0 if you don't: "))
+    while(extra != 0 and extra != 1):
+        extra = int(input("Enter 1. if you want extra attractions or 0 if you don't: "))
+
+    if(extra == 1):
+        attchoice = int(input("Select options from 0 - 2 to buy extra attraction: "))
+        while(attchoice <0 and attchoice>2):
+            attchoice = int(input("Select options from 0 - 2 to buy extra attraction: "))
+        if (daycount == 1):
+            while (attchoice == 2)
+                print("BBQ is only for 2 Day Ticket Holders")
+            att_counts[attchoice] = att_counts[attchoice] + 1
+
+        elif(daycount==2):
+            att_counts[attchoice] = att_counts[attchoice] + 1
+
+    # Costing
     

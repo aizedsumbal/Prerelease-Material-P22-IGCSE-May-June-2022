@@ -11,6 +11,8 @@ att_price = [2.5, 2, 5]
 status = 1
 famadults = 0
 famchildren = 0
+grpadults = 0
+grpchildren = 0
 
 
 print()
@@ -61,4 +63,21 @@ while(ticketinput != -1):
         type_counts[3] = type_counts[3] + familycount
         adultcount = famadults
         childcount = famchildren
+        print("")
+    elif(ticketinput == 4):
+        print("Enter tickets more more than or equal to 6.")
+        groupcount = int(input("Group count: "))
+        while(groupcount < 6):
+            print("Group count is less than 6. Adult count and child count numbers add up to less than 6.")
+            groupcount = int(input("Group count: "))
+
+        adultcount = int(input("Adult or senior number in the group: "))
+        childcount = int(input("Child number in the group: "))
+        while(adultcount+childcount != groupcount):
+            print("Adults/seniors and children do not add up to the total group size.")
+            adultcount = int(input("Adult or senior number in the group: "))
+            childcount = int(input("Child number in the group: "))
+        grpadults = adultcount
+        grpchildren = childcount
+        type_counts[4] = type_counts[4] + groupcount
         print("")

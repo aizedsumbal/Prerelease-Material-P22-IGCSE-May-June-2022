@@ -81,3 +81,4 @@ while(ticketinput != -1):
         grpchildren = childcount
         type_counts[4] = type_counts[4] + groupcount
         print("")
+    

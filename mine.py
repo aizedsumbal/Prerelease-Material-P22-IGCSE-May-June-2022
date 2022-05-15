@@ -9,6 +9,8 @@ twoday_price = [30, 18, 24, 90, 22.5]
 ext_attraction = ["0. Lion Feeding", "1. Penguin Feeding", "2. Evening BBQ (Only 2 Day Ticket Holders)"]
 att_price = [2.5, 2, 5]
 status = 1
+famadults = 0
+famchildren = 0
 
 
 print()
@@ -42,4 +44,8 @@ while(ticketinput != -1):
     elif(ticket_type == 2):
         seniorcount = int(input("Senior count:"))
         type_counts[2] = type_counts[2] + seniorcount
-    
+    elif(ticket_type == 3):
+        familycount = int(input("Family count: "))
+        adultcount = int(input("Adult or senior count: "))
+        childcount = int(input("Child count: "))
+        if(familycount >= adultcount/2 and )

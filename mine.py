@@ -33,22 +33,32 @@ for i in range(7):
         day = 0
     day = day + 1
 
-ticketinput = int(input("Select options from 0 - 4 to book ticket(s) or -1 to end booking: "))
+
 while(ticketinput != -1):
-    if(ticket_type == 0):
+    ticketinput = int(input("Select options from 0 - 4 to book ticket(s) or -1 to end booking: "))
+    if(ticketinput == 0):
         adultcount = int(input("Adult count: "))
         type_counts[0] = type_counts[0] + adultcount
-    elif(ticket_type == 1):
+    elif(ticketinput == 1):
         childcount = int(input("Child count: "))
         type_counts[1] = type_counts[1] + childcount
-    elif(ticket_type == 2):
+    elif(ticketinput == 2):
         seniorcount = int(input("Senior count:"))
         type_counts[2] = type_counts[2] + seniorcount
-    elif(ticket_type == 3):
+    elif(ticketinput == 3):
         familycount = int(input("Family count: "))
+        print(f"Maximum adults/senior allowed are {familycount*2}")
+        print(f"Maximum children allowed are {familycount*3}")
         adultcount = int(input("Adult or senior count: "))
         childcount = int(input("Child count: "))
-        if((familycount >= adultcount/2) and (familycount >= childcount/3)):
-            type_counts[3] = type_counts[3] + familycount
-            adultcount = famadults
-            childcount = famchildren            
+        while(familycount < adultcount/2) or (familycount < childcount/3):
+            print("You have exceeded the adult/senior count or the child count for the tickets. Please type in details again:")
+            familycount = int(input("Family count: "))
+            print(f"Maximum adults/senior allowed are {familycount*2}")
+            print(f"Maximum children allowed are {familycount*3}")
+            adultcount = int(input("Adult or senior count: "))
+            childcount = int(input("Child count: "))
+        type_counts[3] = type_counts[3] + familycount
+        adultcount = famadults
+        childcount = famchildren
+        print("")

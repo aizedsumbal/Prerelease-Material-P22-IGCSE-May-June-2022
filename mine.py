@@ -48,4 +48,4 @@ while(ticketinput != -1):
         familycount = int(input("Family count: "))
         adultcount = int(input("Adult or senior count: "))
         childcount = int(input("Child count: "))
-        if(familycount >= adultcount/2 and )
+        if((familycount >= adultcount/2) and (familycount >= childcount/3)):

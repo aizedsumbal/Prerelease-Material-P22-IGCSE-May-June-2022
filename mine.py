@@ -49,3 +49,6 @@ while(ticketinput != -1):
         adultcount = int(input("Adult or senior count: "))
         childcount = int(input("Child count: "))
         if((familycount >= adultcount/2) and (familycount >= childcount/3)):
+            type_counts[3] = type_counts[3] + familycount
+            adultcount = famadults
+            childcount = famchildren            

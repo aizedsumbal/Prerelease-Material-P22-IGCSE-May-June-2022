@@ -1,5 +1,4 @@
-total = 0
-bookingrpt = 0
+total_cost = 0
 ticketinput = 0
 attractioninput = 0
 daycount=0
@@ -100,12 +99,12 @@ while(ticketinput != -1):
         while(attchoice <0 and attchoice>2):
             attchoice = int(input("Select options from 0 - 2 to buy extra attraction: "))
         if (daycount == 1):
-            while (attchoice == 2)
+            while (attchoice == 2):
                 print("BBQ is only for 2 Day Ticket Holders")
             att_counts[attchoice] = att_counts[attchoice] + 1
 
         elif(daycount==2):
             att_counts[attchoice] = att_counts[attchoice] + 1
 
-    # Costing
-    
+# Costing
+if(day_count==1):

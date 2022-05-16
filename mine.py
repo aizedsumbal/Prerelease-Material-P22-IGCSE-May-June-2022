@@ -73,7 +73,7 @@ while(ticketinput != -1):
         adultcount = famadults
         childcount = famchildren
         print("")
-        print("Enter tickets more more than or equal to 6.")
+
     elif(ticketinput == 4):
         groupcount = int(input("Group count: "))
         while(groupcount < 6):
@@ -126,7 +126,7 @@ for i in range(3):
 print(tktcost + attcost)
 
 # Task 3
-if(daycount = 1):
+if(daycount == 1):
     if(type_counts[0]+type_counts[1]+type_counts[2] >= 6):
         temptotal = type_counts[0] + type_counts[1] + type_counts[2]
         regtogroupcost = (temptotal) * oneday_price[4]
@@ -135,14 +135,16 @@ if(daycount = 1):
         temptotal = famadults + famchildren
         famtogrpcost = temptotal * oneday_price[4]
 
-    if((type_counts[0] + type_counts[3])%2 == 0  and type_counts[2] % 3 == 0 and type_counts[2]/(type_counts[0] + type_counts[3]) == 1.5):
-        tempadults = type_counts[0] + type_counts[3]
-        regofamcost =  (tempadults/2)*oneday_price[3]
+    if((type_counts[0] + type_counts[3])%2 == 0  and type_counts[2] % 3 == 0 ):
+        if(type_counts[2]/(type_counts[0] + type_counts[3]) == 1.5):
+            tempadults = type_counts[0] + type_counts[3]
+            regofamcost =  (tempadults/2)*oneday_price[3]
 
-    if(grpadults%2 == 0 and grpchildren%3 == 0 and grpchildren/grpadults == 1.5):
-        grptofamcost =(grpadults/2) * oneday_price[3]
+    if(grpadults%2 == 0 and grpchildren%3 == 0):
+        if(grpchildren/grpadults == 1.5):
+            grptofamcost =(grpadults/2) * oneday_price[3]
 
-if(daycount = 2):
+if(daycount == 2):
     if(type_counts[0]+type_counts[1]+type_counts[2] >= 6):
         temptotal = type_counts[0] + type_counts[1] + type_counts[2]
         regtogroupcost = (temptotal) * twoday_price[4]
@@ -152,10 +154,13 @@ if(daycount = 2):
         famtogrpcost = temptotal * twoday_price[4]
 
     if((type_counts[0] + type_counts[3])%2 == 0  and type_counts[2] % 3 == 0 and type_counts[2]/(type_counts[0] + type_counts[3]) == 1.5):
-        tempadults = type_counts[0] + type_counts[3]
-        regofamcost =  (tempadults/2)*twoday_price[3]
+        if(type_counts[2]/(type_counts[0] + type_counts[3]) == 1.5):
+            tempadults = type_counts[0] + type_counts[3]
+            regofamcost =  (tempadults/2)*twoday_price[3]
 
-    if(grpadults%2 == 0 and grpchildren%3 == 0 and grpchildren/grpadults == 1.5):
-        grptofamcost =(grpadults/2) * tweday_price[3]
+    if(grpadults%2 == 0 and grpchildren%3 == 0):
+        if(grpchildren/grpadults == 1.5):
+            grptofamcost =(grpadults/2) * twoday_price[3]
 
-    
+# Comparison
+if():

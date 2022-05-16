@@ -2,6 +2,8 @@ total_cost = 0
 ticketinput = 0
 attractioninput = 0
 daycount=0
+tktcost = 0
+attcost = 0
 ticket_type = ["0. Adult","1. Child","2. Senior","3. Family","4. Group>=6"]
 type_counts = [0,0,0,0,0]
 att_counts = [0,0,0]
@@ -87,24 +89,32 @@ while(ticketinput != -1):
         type_counts[4] = type_counts[4] + groupcount
         print("")
 
-    else:
-        print("Enter a value between 0 and 4")
 
-    extra = int(input("\nEnter 1. if you want extra attractions or 0 if you don't: "))
-    while(extra != 0 and extra != 1):
-        extra = int(input("Enter 1. if you want extra attractions or 0 if you don't: "))
 
-    if(extra == 1):
-        attchoice = int(input("Select options from 0 - 2 to buy extra attraction: "))
-        while(attchoice <0 and attchoice>2):
-            attchoice = int(input("Select options from 0 - 2 to buy extra attraction: "))
-        if (daycount == 1):
-            while (attchoice == 2):
-                print("BBQ is only for 2 Day Ticket Holders")
-            att_counts[attchoice] = att_counts[attchoice] + 1
-
-        elif(daycount==2):
-            att_counts[attchoice] = att_counts[attchoice] + 1
+    # extra = int(input("\nEnter 1. if you want extra attractions or 0 if you don't: "))
+    # while(extra != 0 and extra != 1):
+    #     extra = int(input("Enter 1. if you want extra attractions or 0 if you don't: "))
+    #
+    # if(extra == 1):
+    #     attchoice = int(input("Select options from 0 - 2 to buy extra attraction: "))
+    #     while(attchoice <0 and attchoice>2):
+    #         attchoice = int(input("Select options from 0 - 2 to buy extra attraction: "))
+    #     if (daycount == 1):
+    #         while (attchoice == 2):
+    #             print("BBQ is only for 2 Day Ticket Holders")
+    #         att_counts[attchoice] = att_counts[attchoice] + 1
+    #
+    #     elif(daycount==2):
+    #         att_counts[attchoice] = att_counts[attchoice] + 1
 
 # Costing
-if(day_count==1):
+if(daycount==1):
+    for i in range(5):
+        temp = type_counts[i] *  oneday_price[i]
+        tktcost = tktcost + temp
+if(daycount==2):
+    for i in range(5):
+        temp = type_counts[i] *  twoday_price[i]
+        tktcost = tktcost + temp
+
+print(tktcost)

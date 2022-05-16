@@ -10,14 +10,16 @@ att_counts = [0,0,0]
 oneday_price = [20, 12, 16, 60, 15]
 twoday_price = [30, 18, 24, 90, 22.5]
 
-ext_attraction = ["0. Lion Feeding", "1. Penguin Feeding", "2. Evening BBQ (Only 2 Day Ticket Holders)"]
+ext_attraction = ["0. Lion Feeding", "1. Penguin Feeding", "2. Evening BBQ (Only 2 Day Tickets)"]
 att_price = [2.5, 2, 5]
 status = 1
 famadults = 0
 famchildren = 0
 grpadults = 0
 grpchildren = 0
-
+regtogroupcost = 0
+famtogrpcost = 0
+regofamcost = 0
 
 print()
 print("   Ticket Type\t\t\t\tCost for one day\t\tCost for two days")
@@ -71,14 +73,14 @@ while(ticketinput != -1):
         adultcount = famadults
         childcount = famchildren
         print("")
-    elif(ticketinput == 4):
         print("Enter tickets more more than or equal to 6.")
+    elif(ticketinput == 4):
         groupcount = int(input("Group count: "))
         while(groupcount < 6):
+            adultcount = int(input("Adult or senior number in the group: "))
             print("Group count is less than 6. Adult count and child count numbers add up to less than 6.")
             groupcount = int(input("Group count: "))
 
-        adultcount = int(input("Adult or senior number in the group: "))
         childcount = int(input("Child number in the group: "))
         while(adultcount+childcount != groupcount):
             print("Adults/seniors and children do not add up to the total group size.")
@@ -122,3 +124,36 @@ for i in range(3):
     temp = att_counts[i] * att_price[i]
     attcost = temp
 print(tktcost + attcost)
+
+# Task 3
+if(daycount = 1):
+    if(type_counts[0]+type_counts[1]+type_counts[2] >= 6):
+        temptotal = type_counts[0] + type_counts[1] + type_counts[2]
+        regtogroupcost = (temptotal) * oneday_price[4]
+
+    if(famadults + famchildren >= 6):
+        temptotal = famadults + famchildren
+        famtogrpcost = temptotal * oneday_price[4]
+
+    if((type_counts[0] + type_counts[3])%2 == 0  and type_counts[2] % 3 == 0 and type_counts[2]/(type_counts[0] + type_counts[3]) == 1.5):
+        tempadults = type_counts[0] + type_counts[3]
+        regofamcost =  (tempadults/2)*oneday_price[3]
+
+    if(grpadults%2 == 0 and grpchildren%3 == 0 and grpchildren/grpadults == 1.5):
+        grptofamcost =(grpadults/2) * oneday_price[3]
+
+if(daycount = 2):
+    if(type_counts[0]+type_counts[1]+type_counts[2] >= 6):
+        temptotal = type_counts[0] + type_counts[1] + type_counts[2]
+        regtogroupcost = (temptotal) * twoday_price[4]
+
+    if(famadults + famchildren >= 6):
+        temptotal = famadults + famchildren
+        famtogrpcost = temptotal * twoday_price[4]
+
+    if((type_counts[0] + type_counts[3])%2 == 0  and type_counts[2] % 3 == 0 and type_counts[2]/(type_counts[0] + type_counts[3]) == 1.5):
+        tempadults = type_counts[0] + type_counts[3]
+        regofamcost =  (tempadults/2)*twoday_price[3]
+
+    if(grpadults%2 == 0 and grpchildren%3 == 0 and grpchildren/grpadults == 1.5):
+        grptofamcost =(grpadults/2) * tweday_price[3]

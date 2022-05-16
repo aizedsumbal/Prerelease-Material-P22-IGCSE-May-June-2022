@@ -157,3 +157,5 @@ if(daycount = 2):
 
     if(grpadults%2 == 0 and grpchildren%3 == 0 and grpchildren/grpadults == 1.5):
         grptofamcost =(grpadults/2) * tweday_price[3]
+
+    

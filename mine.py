@@ -89,23 +89,24 @@ while(ticketinput != -1):
         type_counts[4] = type_counts[4] + groupcount
         print("")
 
+    extra = int(input("Enter 1. if you want extra attractions or 0 if you don't: "))
+    while(extra != 0 and extra != 1):
+        extra = int(input("Enter 1. if you want extra attractions or 0 if you don't: "))
 
+    if(extra == 1):
+        attchoice = int(input("Select options from 0 - 2 to buy extra attraction: "))
+        while(attchoice <0 and attchoice>2):
+            attchoice = int(input("Select options from 0 - 2 to buy extra attraction: "))
+        if (daycount == 1):
+            if(attchoice == 2):
+                print("BBQ is only for 2 Day Ticket Holders")
+            else:
+                att_counts[attchoice] = att_counts[attchoice] + 1
 
-    # extra = int(input("\nEnter 1. if you want extra attractions or 0 if you don't: "))
-    # while(extra != 0 and extra != 1):
-    #     extra = int(input("Enter 1. if you want extra attractions or 0 if you don't: "))
-    #
-    # if(extra == 1):
-    #     attchoice = int(input("Select options from 0 - 2 to buy extra attraction: "))
-    #     while(attchoice <0 and attchoice>2):
-    #         attchoice = int(input("Select options from 0 - 2 to buy extra attraction: "))
-    #     if (daycount == 1):
-    #         while (attchoice == 2):
-    #             print("BBQ is only for 2 Day Ticket Holders")
-    #         att_counts[attchoice] = att_counts[attchoice] + 1
-    #
-    #     elif(daycount==2):
-    #         att_counts[attchoice] = att_counts[attchoice] + 1
+        elif(daycount==2):
+            att_counts[attchoice] = att_counts[attchoice] + 1
+    else:
+        pass
 
 # Costing
 if(daycount==1):
@@ -117,4 +118,7 @@ if(daycount==2):
         temp = type_counts[i] *  twoday_price[i]
         tktcost = tktcost + temp
 
-print(tktcost)
+for i in range(3):
+    temp = att_counts[i] * att_price[i]
+    attcost = temp
+print(tktcost + attcost)
